@@ -1,81 +1,76 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { CheckCircle, BookOpen, TrendingUp, Shield, Users } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { CheckCircle, BookOpen, TrendingUp, Shield, Users, Target } from "lucide-react";
 
 const CourseCurriculum = () => {
   const modules = [
     {
-      icon: <BookOpen className="text-blue-500" size={24} />,
+      icon: BookOpen,
       title: "יסודות הקריפטו",
-      topics: ["מה זה בלוקצ'יין", "ביטקוין ואת'ריום", "ארנקים דיגיטליים", "מונחי יסוד"]
+      description: "הבנת הטכנולוגיה, ארנקים דיגיטליים ורכישה ראשונה"
     },
     {
-      icon: <TrendingUp className="text-green-500" size={24} />,
-      title: "אסטרטגיות מסחר",
-      topics: ["ניתוח טכני", "דפוסי גרפים", "כלי מסחר", "זמני כניסה ויציאה"]
+      icon: TrendingUp,
+      title: "אנליזה טכנית",
+      description: "קריאת גרפים, זיהוי טרנדים ואינדיקטורים מתקדמים"
     },
     {
-      icon: <Shield className="text-red-500" size={24} />,
+      icon: Shield,
       title: "ניהול סיכונים",
-      topics: ["חוקי זהב למסחר", "גודל פוזיציה", "Stop Loss", "פיזור השקעות"]
+      description: "אסטרטגיות הגנה, Stop Loss ו-Take Profit"
     },
     {
-      icon: <Users className="text-purple-500" size={24} />,
-      title: "מסחר מעשי",
-      topics: ["פתיחת חשבון", "ביצוע עסקאות", "מעקב ודיווח", "טעויות נפוצות"]
+      icon: Users,
+      title: "פסיכולוגיית מסחר",
+      description: "שליטה ברגשות ובקבלת החלטות בלחץ"
+    },
+    {
+      icon: Target,
+      title: "אסטרטגיות מסחר",
+      description: "מסחר יומי, Swing Trading והשקעות ארוכות טווח"
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-900 text-white">
+    <section className="py-20 px-4 bg-gray-900">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            תוכן הקורס
-          </h2>
+          <h2 className="text-4xl font-bold text-white mb-6">תוכן הקורס</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            מסע מקיף מהיסודות ועד למסחר מתקדם - כל מה שצריך כדי להצליח
+            מדריך מקיף וממוקד שילווה אותך משלב המתחיל ועד לרמה המקצועית
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {modules.map((module, index) => (
-            <Card key={index} className="bg-gray-800 border-gray-700 hover:bg-gray-750 transition-colors duration-300">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  {module.icon}
-                  <CardTitle className="text-white text-xl">{module.title}</CardTitle>
+            <Card key={index} className="bg-gray-800 border-gray-700 hover:border-green-500 transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <module.icon className="text-green-400" size={24} />
+                  <h3 className="text-lg font-semibold text-white">{module.title}</h3>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {module.topics.map((topic, topicIndex) => (
-                    <li key={topicIndex} className="flex items-center gap-2 text-gray-300">
-                      <CheckCircle className="text-green-400" size={16} />
-                      <span>{topic}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-gray-300 text-sm leading-relaxed">{module.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-8 mb-8">
-            <h3 className="text-2xl font-bold mb-4">
-              אל תפספסו את ההזדמנות להוביל את העתיד הכלכלי שלכם
-            </h3>
-            <p className="text-lg mb-6">
-              הצטרפו לקורס מקצועי שילווה אתכם צעד אחר צעד, עם תמיכה אישית וקהילה תומכת לאורך כל הדרך.
-            </p>
-            <Button 
-              size="lg" 
-              className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-            >
-              השאירו פרטים והתחילו היום
-            </Button>
+        <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">מה תקבל בקורס?</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              "גישה לכל החומרים ללא הגבלת זמן",
+              "קבוצת תמיכה פרטית בטלגרם",
+              "עדכונים שוטפים על השוק",
+              "מדריכים מעשיים ווידאו",
+              "תבניות מסחר מוכנות לשימוש",
+              "ליווי אישי ותמיכה צמודה"
+            ].map((item, index) => (
+              <div key={index} className="flex items-center gap-3">
+                <CheckCircle className="text-green-400" size={20} />
+                <span className="text-gray-300">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

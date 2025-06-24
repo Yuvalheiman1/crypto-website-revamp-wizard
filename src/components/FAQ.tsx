@@ -51,31 +51,27 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-gray-800">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            שאלות נפוצות
-          </h2>
-          <p className="text-xl text-gray-600">
-            התשובות לשאלות הכי חשובות שיש לכם
+          <h2 className="text-4xl font-bold text-white mb-6">שאלות נפוצות</h2>
+          <p className="text-xl text-gray-300">
+            מצא תשובות לשאלות הנפוצות ביותר על הקורס ועולם הקריפטו
           </p>
         </div>
-
-        <div className="bg-gray-50 rounded-2xl p-8">
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg px-6 border-0 shadow-sm">
-                <AccordionTrigger className="text-right text-lg font-semibold text-gray-900 hover:text-blue-600 py-6">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-right text-gray-600 text-base leading-relaxed pb-6">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+        
+        <Accordion type="single" collapsible className="space-y-4">
+          {faqs.map((faq, index) => (
+            <AccordionItem key={index} value={`item-${index}`} className="bg-gray-900 border-gray-700 rounded-lg">
+              <AccordionTrigger className="text-white hover:text-orange-400 px-6 py-4 text-right">
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-300 px-6 pb-4">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </section>
   );

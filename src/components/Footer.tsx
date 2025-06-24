@@ -4,7 +4,7 @@ import { Bitcoin, TrendingUp, Shield } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-16 px-4">
+    <footer className="bg-black text-white py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">

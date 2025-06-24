@@ -1,64 +1,58 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, Shield, Users, BookOpen, HeadphonesIcon, Clock } from "lucide-react";
+import { TrendingUp, Shield, Users, BookOpen, Clock, Star } from "lucide-react";
 
 const ValueProposition = () => {
   const benefits = [
     {
-      icon: <CheckCircle className="text-green-500" size={24} />,
-      title: "הדרכה מקצועית",
-      description: "למד מאנשי מקצוע עם ניסיון מוכח בשוק"
+      icon: TrendingUp,
+      title: "מסחר מתקדם",
+      description: "למד טכניקות מסחר מתקדמות ואסטרטגיות מנצחות"
     },
     {
-      icon: <Shield className="text-blue-500" size={24} />,
-      title: "מסחר בטוח ואחראי",
-      description: "כלים לניהול סיכונים ולמסחר חכם"
+      icon: Shield,
+      title: "ניהול סיכונים",
+      description: "כלים מקצועיים לניהול סיכונים ושמירה על ההון"
     },
     {
-      icon: <Users className="text-purple-500" size={24} />,
+      icon: Users,
       title: "קהילה תומכת",
-      description: "קבוצת תלמידים פעילה עם תמיכה מתמדת"
+      description: "הצטרף לקהילה של סוחרים מנוסים ומתחילים"
     },
     {
-      icon: <BookOpen className="text-orange-500" size={24} />,
-      title: "תכנים מעודכנים",
-      description: "עדכונים שוטפים לשוק המשתנה"
+      icon: BookOpen,
+      title: "חומר לימוד מקיף",
+      description: "מדריכים מפורטים וחומרי לימוד איכותיים"
     },
     {
-      icon: <HeadphonesIcon className="text-red-500" size={24} />,
-      title: "תמיכה אישית",
-      description: "ליווי מקצועי לאורך כל המסע"
+      icon: Clock,
+      title: "ליווי אישי",
+      description: "תמיכה אישית וליווי צמוד לאורך כל הדרך"
     },
     {
-      icon: <Clock className="text-teal-500" size={24} />,
-      title: "גישה ללא הגבלה",
-      description: "צפייה חופשית בכל התכנים, לתמיד"
+      icon: Star,
+      title: "תוצאות מוכחות",
+      description: "שיטות מוכחות שהניבו תוצאות אמיתיות"
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-gray-800">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            למה לבחור בקורס שלנו?
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            הקורס המקיף ביותר לקריפטו בישראל - עם הכלים, הידע והתמיכה שתצטרכו להצליח
+          <h2 className="text-4xl font-bold text-white mb-6">למה לבחור בנו?</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            הקורס המקיף ביותר בישראל ללימוד מסחר והשקעה במטבעות דיגיטליים
           </p>
         </div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+            <Card key={index} className="bg-gray-900 border-gray-700 hover:border-orange-500 transition-all duration-300">
               <CardContent className="p-6 text-center">
-                <div className="mb-4 flex justify-center">{benefit.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {benefit.description}
-                </p>
+                <benefit.icon className="mx-auto mb-4 text-orange-400" size={40} />
+                <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
+                <p className="text-gray-300">{benefit.description}</p>
               </CardContent>
             </Card>
           ))}
