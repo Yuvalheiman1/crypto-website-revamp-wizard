@@ -1,20 +1,19 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, MessageCircle, TrendingUp, Heart } from "lucide-react";
 
 const Community = () => {
   return (
-    <section className="py-20 px-4 bg-gray-800">
+    <section className="py-20 px-4 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-6">אתם אף פעם לא לבד!</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
             בקורס של קריפטומאט אתם מצטרפים לקהילה תומכת ומקצועית
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <Card className="bg-gray-900 border-gray-700">
+          <Card className="bg-black/40 backdrop-blur-sm border-gray-600">
             <CardContent className="p-8">
               <div className="flex items-center gap-4 mb-6">
                 <Users className="text-blue-400" size={32} />
@@ -27,7 +26,7 @@ const Community = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 border-gray-700">
+          <Card className="bg-black/40 backdrop-blur-sm border-gray-600">
             <CardContent className="p-8">
               <div className="flex items-center gap-4 mb-6">
                 <MessageCircle className="text-green-400" size={32} />
@@ -42,7 +41,7 @@ const Community = () => {
         </div>
 
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 mb-8">
+          <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-lg p-8 mb-8">
             <Heart className="mx-auto mb-4 text-white" size={48} />
             <h3 className="text-2xl font-bold text-white mb-4">הצלחה היא תהליך</h3>
             <p className="text-white text-lg">ואנחנו מלווים אתכם בכל שלב בדרך</p>

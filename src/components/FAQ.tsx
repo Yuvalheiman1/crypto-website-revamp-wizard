@@ -51,22 +51,22 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-800">
+    <section className="py-20 px-4 bg-transparent">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-6">שאלות נפוצות</h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-gray-200">
             מצא תשובות לשאלות הנפוצות ביותר על הקורס ועולם הקריפטו
           </p>
         </div>
         
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="bg-gray-900 border-gray-700 rounded-lg">
+            <AccordionItem key={index} value={`item-${index}`} className="bg-black/40 backdrop-blur-sm border-gray-600 rounded-lg">
               <AccordionTrigger className="text-white hover:text-orange-400 px-6 py-4 text-right">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-300 px-6 pb-4">
+              <AccordionContent className="text-gray-200 px-6 pb-4">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

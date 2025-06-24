@@ -1,10 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, TrendingUp } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-20 px-4">
+    <section className="bg-transparent text-white py-20 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <div className="mb-8">
           <TrendingUp className="mx-auto mb-6 text-orange-400" size={60} />

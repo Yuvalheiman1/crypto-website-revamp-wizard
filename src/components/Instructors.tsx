@@ -1,19 +1,18 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 
 const Instructors = () => {
   return (
-    <section className="py-20 px-4 bg-gray-800">
+    <section className="py-20 px-4 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-6">הכירו את המדריכים</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
             מומחים מנוסים שילוו אתכם בכל שלב בדרך להצלחה בעולם הקריפטו
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <Card className="bg-gray-900 border-gray-700 text-white">
+          <Card className="bg-black/40 backdrop-blur-sm border-gray-600 text-white">
             <CardContent className="p-8">
               <div className="flex flex-col items-center text-center">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-orange-500">
@@ -38,7 +37,7 @@ const Instructors = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 border-gray-700 text-white">
+          <Card className="bg-black/40 backdrop-blur-sm border-gray-600 text-white">
             <CardContent className="p-8">
               <div className="flex flex-col items-center text-center">
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-blue-500">

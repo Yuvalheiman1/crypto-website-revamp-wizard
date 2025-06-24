@@ -1,4 +1,3 @@
-
 import Hero from "@/components/Hero";
 import ValueProposition from "@/components/ValueProposition";
 import WhyCrypto from "@/components/WhyCrypto";
@@ -12,7 +11,7 @@ import MobileNavigation from "@/components/MobileNavigation";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black pb-20 md:pb-0" dir="rtl">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 via-gray-700 to-orange-800 pb-20 md:pb-0" dir="rtl">
       <div id="hero">
         <Hero />
       </div>
