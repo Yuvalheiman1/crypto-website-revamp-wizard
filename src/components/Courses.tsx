@@ -9,6 +9,7 @@ const Courses = () => {
       id: "basic",
       title: "קורס בסיסי",
       price: "290 ש\"ח",
+      originalPrice: "350 ש\"ח",
       icon: BookOpen,
       description: "תלמד איך לפתוח ארנק, איך להעביר כסף, איך להשקיע נכון ולהיכנס לעולם הקריפטו בדרך חכמה, כולל כמה טיפים מקצועיים.",
       features: [
@@ -19,7 +20,7 @@ const Courses = () => {
         "טיפים מקצועיים"
       ],
       purchaseUrl: "https://secure.cardcom.solutions/e/hGPNcKEXUa0MXEsxByo4g",
-      color: "green",
+      color: "orange",
       showPurchaseButton: true
     },
     {
@@ -30,6 +31,7 @@ const Courses = () => {
       icon: TrendingUp,
       description: "בקורס הזה אתה לומד איך לסחור ביום-יום, להפוך את זה לעבודה, כולל גישה לקבוצה פרטית עם ניתוחים והמלצות.",
       features: [
+        "כל מה שמקבלים בקורס בסיסי",
         "מסחר יומי מקצועי",
         "הפיכת המסחר לעבודה",
         "גישה לקבוצה פרטית",
