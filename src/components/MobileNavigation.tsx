@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from "react";
-import { Home, Award, TrendingUp, HelpCircle, Users, BookOpen, MessageCircle, Clock, Phone } from "lucide-react";
+import { Home, Award, TrendingUp, HelpCircle, Users, BookOpen, MessageCircle, Clock, Phone, ShoppingCart } from "lucide-react";
 
 const MobileNavigation = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -12,6 +11,7 @@ const MobileNavigation = () => {
     { id: 'faq', label: 'שאלות', icon: HelpCircle },
     { id: 'instructors', label: 'מדריכים', icon: Users },
     { id: 'curriculum', label: 'תוכנית', icon: BookOpen },
+    { id: 'courses', label: 'קורסים', icon: ShoppingCart },
     { id: 'community', label: 'קהילה', icon: MessageCircle },
     { id: 'contact', label: 'צור קשר', icon: Phone },
   ];
@@ -44,7 +44,7 @@ const MobileNavigation = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
+  
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-lg border-t border-gray-200 z-50 md:hidden">
       <div className="flex justify-around items-center py-2 px-2">

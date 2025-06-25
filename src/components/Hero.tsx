@@ -1,7 +1,5 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, TrendingUp } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -9,12 +7,16 @@ const Hero = () => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Navigation */}
         <div className="mb-8 flex justify-center">
-          <Link 
-            to="/courses" 
+          <a 
+            href="#courses"
             className="text-orange-400 hover:text-orange-300 transition-colors font-semibold"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
+            }}
           >
             הקורסים שלנו
-          </Link>
+          </a>
         </div>
 
         <div className="mb-8">
@@ -33,10 +35,13 @@ const Hero = () => {
             size="lg" 
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            <Link to="/courses">
+            <a href="#courses" onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
               רכישת קורס
               <ArrowLeft className="mr-2" size={20} />
-            </Link>
+            </a>
           </Button>
           <Button 
             asChild
@@ -44,9 +49,12 @@ const Hero = () => {
             size="lg"
             className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
           >
-            <Link to="#contact">
+            <a href="#contact" onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
               לפרטים נוספים
-            </Link>
+            </a>
           </Button>
         </div>
 

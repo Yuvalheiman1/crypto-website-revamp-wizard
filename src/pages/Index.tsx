@@ -4,6 +4,7 @@ import WhyCrypto from "@/components/WhyCrypto";
 import FAQ from "@/components/FAQ";
 import Instructors from "@/components/Instructors";
 import CourseCurriculum from "@/components/CourseCurriculum";
+import Courses from "@/components/Courses";
 import Community from "@/components/Community";
 import UrgencyCTA from "@/components/UrgencyCTA";
 import Footer from "@/components/Footer";
@@ -29,6 +30,9 @@ const Index = () => {
       </div>
       <div id="curriculum">
         <CourseCurriculum />
+      </div>
+      <div id="courses">
+        <Courses />
       </div>
       <div id="community">
         <Community />
