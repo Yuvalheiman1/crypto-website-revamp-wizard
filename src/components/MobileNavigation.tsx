@@ -70,7 +70,7 @@ const MobileNavigation = () => {
               }`}
             >
               <Icon size={isContact || isCourses ? 18 : 16} />
-              <span className={`text-xs mt-1 font-medium ${(isContact || isCourses) ? 'text-white' : ''}`}>
+              <span className={`text-[10px] mt-1 font-medium ${(isContact || isCourses) ? 'text-white' : ''}`}>
                 {section.label}
               </span>
               {(isContact || isCourses) && (
