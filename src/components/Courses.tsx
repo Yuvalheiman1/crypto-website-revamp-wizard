@@ -20,7 +20,7 @@ const Courses = () => {
       ],
       purchaseUrl: "https://secure.cardcom.solutions/EA/EA5/DGhxCjR4gEq24DqYS1ytw/Order",
       color: "blue",
-      showPurchaseButton: false
+      showPurchaseButton: true
     },
     {
       id: "advanced",
@@ -132,7 +132,10 @@ const Courses = () => {
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-purple-600 px-8 py-4 text-lg font-semibold"
               >
-                <a href="#contact">
+                <a href="#contact" onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}>
                   צור קשר
                   <ArrowLeft className="mr-2" size={20} />
                 </a>
