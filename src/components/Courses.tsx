@@ -19,12 +19,14 @@ const Courses = () => {
         "טיפים מקצועיים"
       ],
       purchaseUrl: "https://secure.cardcom.solutions/EA/EA5/DGhxCjR4gEq24DqYS1ytw/Order",
-      color: "blue"
+      color: "blue",
+      showPurchaseButton: false
     },
     {
       id: "advanced",
       title: "קורס מסחר יומי מתקדם",
-      price: "₪",
+      price: "2600 ש\"ח",
+      originalPrice: "3000 ש\"ח",
       icon: TrendingUp,
       description: "בקורס הזה אתה לומד איך לסחור ביום-יום, להפוך את זה לעבודה, כולל גישה לקבוצה פרטית עם ניתוחים והמלצות.",
       features: [
@@ -35,7 +37,8 @@ const Courses = () => {
         "ליווי אישי"
       ],
       purchaseUrl: "https://secure.cardcom.solutions/EA/EA5/DGhxCjR4gEq24DqYS1ytw/Order",
-      color: "orange"
+      color: "orange",
+      showPurchaseButton: true
     }
   ];
 
@@ -65,6 +68,11 @@ const Courses = () => {
                   {course.title}
                 </CardTitle>
                 <div className={`text-3xl font-bold text-${course.color}-400 mb-4`}>
+                  {course.originalPrice && (
+                    <span className="text-lg line-through text-gray-500 mr-2">
+                      {course.originalPrice}
+                    </span>
+                  )}
                   {course.price}
                 </div>
               </CardHeader>
@@ -89,18 +97,20 @@ const Courses = () => {
                   </ul>
                 </div>
                 
-                <div className="pt-6">
-                  <Button 
-                    asChild
-                    size="lg"
-                    className={`w-full bg-${course.color}-500 hover:bg-${course.color}-600 text-white py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105`}
-                  >
-                    <a href={course.purchaseUrl} target="_blank" rel="noopener noreferrer">
-                      רכישת הקורס
-                      <ArrowLeft className="mr-2" size={20} />
-                    </a>
-                  </Button>
-                </div>
+                {course.showPurchaseButton && (
+                  <div className="pt-6">
+                    <Button 
+                      asChild
+                      size="lg"
+                      className={`w-full bg-${course.color}-500 hover:bg-${course.color}-600 text-white py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105`}
+                    >
+                      <a href={course.purchaseUrl} target="_blank" rel="noopener noreferrer">
+                        רכישת הקורס
+                        <ArrowLeft className="mr-2" size={20} />
+                      </a>
+                    </Button>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
@@ -108,7 +118,7 @@ const Courses = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <Card className="bg-gradient-to-r from-orange-500 to-red-500 border-none text-white">
+          <Card className="bg-gradient-to-r from-purple-600 to-blue-600 border-none text-white">
             <CardContent className="p-8">
               <h2 className="text-3xl font-bold mb-4">
                 יש לך שאלות? נשמח לעזור!
@@ -120,7 +130,7 @@ const Courses = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg font-semibold"
+                className="border-white text-white hover:bg-white hover:text-purple-600 px-8 py-4 text-lg font-semibold"
               >
                 <a href="#contact">
                   צור קשר

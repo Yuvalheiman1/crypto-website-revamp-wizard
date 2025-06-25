@@ -1,3 +1,4 @@
+
 import Hero from "@/components/Hero";
 import ValueProposition from "@/components/ValueProposition";
 import WhyCrypto from "@/components/WhyCrypto";
@@ -31,11 +32,11 @@ const Index = () => {
       <div id="curriculum">
         <CourseCurriculum />
       </div>
-      <div id="courses">
-        <Courses />
-      </div>
       <div id="community">
         <Community />
+      </div>
+      <div id="courses">
+        <Courses />
       </div>
       <div id="contact">
         <UrgencyCTA />

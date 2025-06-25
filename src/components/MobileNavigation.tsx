@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Home, Award, TrendingUp, HelpCircle, Users, BookOpen, MessageCircle, Clock, Phone, ShoppingCart } from "lucide-react";
 
@@ -11,8 +12,8 @@ const MobileNavigation = () => {
     { id: 'faq', label: 'שאלות', icon: HelpCircle },
     { id: 'instructors', label: 'מדריכים', icon: Users },
     { id: 'curriculum', label: 'תוכנית', icon: BookOpen },
-    { id: 'courses', label: 'קורסים', icon: ShoppingCart },
     { id: 'community', label: 'קהילה', icon: MessageCircle },
+    { id: 'courses', label: 'קורסים', icon: ShoppingCart },
     { id: 'contact', label: 'צור קשר', icon: Phone },
   ];
 
@@ -52,6 +53,7 @@ const MobileNavigation = () => {
           const Icon = section.icon;
           const isActive = activeSection === section.id;
           const isContact = section.id === 'contact';
+          const isCourses = section.id === 'courses';
           
           return (
             <button
@@ -60,16 +62,18 @@ const MobileNavigation = () => {
               className={`flex flex-col items-center justify-center p-2 rounded-lg transition-all duration-200 min-w-0 ${
                 isContact 
                   ? 'bg-orange-500 text-white shadow-lg scale-110 pulse' 
-                  : isActive 
-                    ? 'bg-blue-100 text-blue-600' 
-                    : 'text-gray-500 hover:text-gray-700'
+                  : isCourses
+                    ? 'bg-yellow-500 text-white shadow-lg scale-110'
+                    : isActive 
+                      ? 'bg-blue-100 text-blue-600' 
+                      : 'text-gray-500 hover:text-gray-700'
               }`}
             >
-              <Icon size={isContact ? 18 : 16} />
-              <span className={`text-xs mt-1 font-medium ${isContact ? 'text-white' : ''}`}>
+              <Icon size={isContact || isCourses ? 18 : 16} />
+              <span className={`text-xs mt-1 font-medium ${(isContact || isCourses) ? 'text-white' : ''}`}>
                 {section.label}
               </span>
-              {isContact && (
+              {(isContact || isCourses) && (
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
               )}
             </button>

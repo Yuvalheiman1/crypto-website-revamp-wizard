@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, TrendingUp } from "lucide-react";
 
@@ -33,7 +34,7 @@ const Hero = () => {
           <Button 
             asChild
             size="lg" 
-            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             <a href="#courses" onClick={(e) => {
               e.preventDefault();
@@ -47,7 +48,7 @@ const Hero = () => {
             asChild
             variant="outline" 
             size="lg"
-            className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
+            className="border-orange-600 text-orange-400 hover:bg-orange-800 hover:text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
           >
             <a href="#contact" onClick={(e) => {
               e.preventDefault();
@@ -65,7 +66,7 @@ const Hero = () => {
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-green-400 mb-2">100%</div>
-            <div className="text-lg text-gray-300">בעברית וברור</div>
+            <div className="text-lg text-gray-300">בעברית וbror</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-blue-400 mb-2">0</div>
