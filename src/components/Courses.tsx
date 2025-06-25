@@ -19,7 +19,7 @@ const Courses = () => {
         "טיפים מקצועיים"
       ],
       purchaseUrl: "https://secure.cardcom.solutions/e/hGPNcKEXUa0MXEsxByo4g",
-      color: "blue",
+      color: "green",
       showPurchaseButton: true
     },
     {
