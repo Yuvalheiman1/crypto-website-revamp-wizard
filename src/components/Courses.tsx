@@ -18,7 +18,7 @@ const Courses = () => {
         "כניסה חכמה לעולם הקריפטו",
         "טיפים מקצועיים"
       ],
-      purchaseUrl: "https://secure.cardcom.solutions/EA/EA5/DGhxCjR4gEq24DqYS1ytw/Order",
+      purchaseUrl: "https://secure.cardcom.solutions/e/hGPNcKEXUa0MXEsxByo4g",
       color: "blue",
       showPurchaseButton: true
     },
