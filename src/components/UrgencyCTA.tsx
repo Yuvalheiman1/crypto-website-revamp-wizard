@@ -5,6 +5,8 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Clock, ArrowLeft, Phone, Mail, User } from "lucide-react";
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { toast } from "@/hooks/use-toast";
 
 const UrgencyCTA = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ const UrgencyCTA = () => {
     phone: "",
     email: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -20,14 +23,47 @@ const UrgencyCTA = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Here you would integrate with your CRM
+    setIsSubmitting(true);
+    
+    try {
+      // Send email using EmailJS
+      const emailParams = {
+        to_email: 'cryptomath10@gmail.com',
+        subject: 'new lead',
+        message: `${formData.name}\n${formData.phone}\n${formData.email}`
+      };
+
+      await emailjs.send(
+        'service_default', // You'll need to configure this
+        'template_default', // You'll need to configure this
+        emailParams,
+        'your_public_key' // You'll need to configure this
+      );
+
+      toast({
+        title: "הפרטים נשלחו בהצלחה!",
+        description: "נחזור אליך תוך 24 שעות",
+      });
+
+      // Reset form
+      setFormData({ name: "", phone: "", email: "" });
+      
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      toast({
+        title: "שגיאה בשליחת הפרטים",
+        description: "אנא נסה שוב או צור קשר ישירות",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 text-white">
+    <section className="py-20 px-4 bg-transparent text-white">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-12">
           <Clock className="mx-auto mb-6 animate-pulse" size={60} />
@@ -96,9 +132,10 @@ const UrgencyCTA = () => {
               <Button 
                 type="submit"
                 size="lg" 
-                className="w-full bg-white text-orange-600 hover:bg-gray-100 py-4 text-lg font-semibold"
+                disabled={isSubmitting}
+                className="w-full bg-white text-orange-600 hover:bg-gray-100 py-4 text-lg font-semibold disabled:opacity-50"
               >
-                לפרטים נוספים
+                {isSubmitting ? "שולח..." : "לפרטים נוספים"}
                 <ArrowLeft className="mr-2" size={20} />
               </Button>
             </form>
