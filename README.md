@@ -36,7 +36,7 @@ Crypto Website Revamp Wizard is a comprehensive platform for learning, trading, 
 Clone the repository and install dependencies:
 
 ```bash
-git clone <YOUR_GIT_URL>
+git clone https://github.com/Yuvalheiman1/crypto-website-revamp-wizard
 cd crypto-website-revamp-wizard
 npm install
 # or
